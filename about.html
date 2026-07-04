@@ -1,0 +1,135 @@
+<!-- Wanderlog - Week 1 Assignment submission -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Wanderlog — Travel Journal Platform</title>
+    <meta name="description" content="A sanctuary for travelers to plan, log, and organize journeys cleanly.">
+    <!-- Google Fonts: Fraunces, Work Sans, Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about {
+            padding-top: 140px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo" id="logo-link">
+                <span class="logo-icon">W</span>
+                <span class="logo-text">Wanderlog</span>
+            </a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle-label">☰</label>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link text-mono">Home</a></li>
+                <li><a href="destination.html" class="nav-link text-mono" >Destinations</a></li>
+                <li><a href="about.html" class="nav-link active text-mono" >About</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="#login" class="signin text-mono" >Log in</a>
+                <button class="signup text-mono" >Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main>
+        
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <!-- <span class="category-tag text-mono">Our Ethos</span> -->
+                    <h2>A canvas for the modern explorer</h2>
+                    <p>
+                        Wanderlog is designed to be a digital sanctuary for your journeys. We combine precise geolocation, environmental telemetry, and elegant markdown journals to bring your travel logs to life.
+                    </p>
+                    <p>
+                        Whether you are traversing high mountain passes or wandering through narrow city alleyways, your stories deserve to be captured in a medium that respects the beauty of the experience.
+                    </p>
+                    <button class="btn-about" id="btn-about-join">Join Wanderlog</button>
+                </div>
+                <div class="about-stats-panel">
+                    <div class="about-stats-glow"></div>
+                    <div class="glass-card stats-glass" id="about-stats-card">
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <span class="stat-number">12K+</span>
+                                <span class="stat-desc text-mono">Explorers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">45K+</span>
+                                <span class="stat-desc text-mono">Journeys Logged</span>
+                            </div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <span class="stat-number">110+</span>
+                                <span class="stat-desc text-mono">Countries</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">4.9★</span>
+                                <span class="stat-desc text-mono">App Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="pricing" id="pricing">
+            <div class="pricing-container">
+               
+                <h2>Start your travel log today</h2>
+                <p>
+                    Wanderlog is free to use for personal journals. Upgrade anytime to Wanderlog Pro for collaborative itineraries, offline map synchronization, and advanced telemetry exports.
+                </p>
+                <button class="btn-pricing" id="btn-pricing-cta">Get Started Free</button>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">Wanderlog</span>
+                <p class="footer-tagline">Elite Frontend Travel Journal Platform</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html" class="text-mono" >Home</a></li>
+                        <li><a href="destination.html" class="text-mono" >Destinations</a></li>
+                        <li><a href="about.html" class="text-mono" >About</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://fonts.google.com/" target="_blank" >Destination</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" >Online Booking</a></li>
+                        <li><a href="https://developer.mozilla.org/" target="_blank" >Low budget</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wanderlog. Built for the CodGen Internship. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Destinations — Wanderlog</title>
+    <meta name="description" content="Discover hand-crafted journals detailing route info, duration, and personal insights.">
+    <!-- Google Fonts: Fraunces, Work Sans, Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .destinations {
+            padding-top: 140px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo" id="logo-link">
+                <span class="logo-icon">W</span>
+                <span class="logo-text">Wanderlog</span>
+            </a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle-label">☰</label>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link text-mono" >Home</a></li>
+                <li><a href="destination.html" class="nav-link active text-mono" >Destinations</a></li>
+                <li><a href="about.html" class="nav-link text-mono" >About</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="#login" class="signin text-mono" >Log in</a>
+                <button class="signup text-mono" >Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Featured Destinations -->
+        <section class="destinations" >
+            <div class="section-header">
+                
+                <h2>Featured Destinations</h2>
+                <p>Explore hand-crafted journals detailing route info, duration, and personal insights.</p>
+            </div>
+            <div class="destinations-grid">
+                <!-- Destination 1 -->
+                <article class="glass-card destination-card" >
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                       
+                        <h3 class="card-title">Reykjavík Aurora</h3>
+                        <p class="card-excerpt">
+                            Chasing the Aurora Borealis across the Icelandic lava fields. Green ribbons of light danced across the clear night sky, reflecting on the volcanic sands.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">4 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">120 km</span>
+                    </footer>
+                </article>
+
+                <article class="glass-card destination-card" >
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                      
+                        <h3 class="card-title">Amalfi Steps</h3>
+                        <p class="card-excerpt">
+                            Navigating the historic stairways between cliffside villages. The Mediterranean sea stretches infinitely in brilliant turquoise beneath the lemon groves.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">7 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">28 km</span>
+                    </footer>
+                </article>
+
+              
+                <article class="glass-card destination-card" >
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517330357046-3ab5a5dd42a1?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                      
+                        <h3 class="card-title">Patagonia Windward</h3>
+                        <p class="card-excerpt">
+                            Exploring the dramatic granite peaks of Torres del Paine. Strong southern winds and majestic glaciers shaped our challenging trek through the wilderness.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">8 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">85 km</span>
+                    </footer>
+                </article>
+
+                
+                <article class="glass-card destination-card" >
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                      
+                        <h3 class="card-title">Kyoto Bamboo</h3>
+                        <p class="card-excerpt">
+                            Walking through the towering Arashiyama groves at sunrise. The morning light filters through the giant green stalks, creating a serene and timeless atmosphere.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">5 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">34 km</span>
+                    </footer>
+                </article>
+
+                
+                <article class="glass-card destination-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                       
+                        <h3 class="card-title">Santorini Caldera</h3>
+                        <p class="card-excerpt">
+                            Watching the sunset over the white-washed cliffside houses. The volcanic caldera stretches below in deep blue, dotted with sailing yachts.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">3 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">15 km</span>
+                    </footer>
+                </article>
+
+              
+                <article class="glass-card destination-card" >
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div>
+                        
+                        <h3 class="card-title">Sahara Dunes</h3>
+                        <p class="card-excerpt">
+                            Trekking by camel into the golden Erg Chebbi dunes. Camping under an endless sea of desert stars while listening to traditional Berber music.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <span class="stat-label text-mono">Duration</span>
+                        <span class="stat-value text-mono">2 Days</span>
+                        <span class="divider text-mono">|</span>
+                        <span class="stat-label text-mono">Distance</span>
+                        <span class="stat-value text-mono">45 km</span>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">Wanderlog</span>
+                <p class="footer-tagline">Elite Frontend Travel Journal Platform</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html" class="text-mono" >Home</a></li>
+                        <li><a href="destination.html" class="text-mono" >Destinations</a></li>
+                        <li><a href="about.html" class="text-mono">About</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://fonts.google.com/" target="_blank" >Destination</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" >Online Booking</a></li>
+                        <li><a href="https://developer.mozilla.org/" target="_blank" >Low budget</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wanderlog. Built for the CodGen Internship. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
