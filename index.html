@@ -25,14 +25,14 @@
             <label for="menu-toggle" class="menu-toggle-label">☰</label>
             
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active text-mono" >Home</a></li>
-                <li><a href="destination.html" class="nav-link text-mono" >Destinations</a></li>
-                <li><a href="about.html" class="nav-link text-mono" >About</a></li>
+                <li><a href="index.html" class="nav-link active text-mono" id="nav-link-home">Home</a></li>
+                <li><a href="destination.html" class="nav-link text-mono" id="nav-link-destinations">Destinations</a></li>
+                <li><a href="about.html" class="nav-link text-mono" id="nav-link-about">About</a></li>
             </ul>
 
             <div class="auth-buttons">
-                <a href="#login" class="signin text-mono" >Log in</a>
-                <button class="signup text-mono" >Get Started</button>
+                <a href="#login" class="signin text-mono" id="link-header-login">Log in</a>
+                <button class="signup text-mono" id="btn-header-start">Get Started</button>
             </div>
         </div>
     </header>
@@ -81,38 +81,6 @@
     </main>
 
 
-    <section class="contact">
-
-  <h2>Contact Us</h2>
-  <p>We’d love to hear from you! Get in touch 👇</p>
-
-  <div class="contact-container">
-
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="contact-info">
-      <h3>Get in Touch</h3>
-      <p>📍 Pune, India</p>
-      <p>📞 +91 9876543210</p>
-      <p>✉️ wanderlog@gmail.com</p>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="map">
-  <iframe 
-    src="https://maps.google.com/maps?q=pune&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    allowfullscreen="">
-  </iframe>
-</section>
-
     <footer class="app-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -123,17 +91,17 @@
                 <div class="link-group">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="index.html" class="text-mono" >Home</a></li>
-                        <li><a href="destination.html" class="text-mono" >Destinations</a></li>
-                        <li><a href="about.html" class="text-mono" >About</a></li>
+                        <li><a href="index.html" class="text-mono" id="link-footer-home">Home</a></li>
+                        <li><a href="destination.html" class="text-mono" id="link-footer-destinations">Destinations</a></li>
+                        <li><a href="about.html" class="text-mono" id="link-footer-about">About</a></li>
                     </ul>
                 </div>
                 <div class="link-group">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="https://fonts.google.com/" target="_blank" >Destination</a></li>
-                        <li><a href="https://css-tricks.com/" target="_blank" >Online Booking</a></li>
-                        <li><a href="https://developer.mozilla.org/" target="_blank" >Low budget</a></li>
+                        <li><a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" class="text-mono" id="link-footer-google-fonts">Google Fonts</a></li>
+                        <li><a href="https://css-tricks.com/" target="_blank" rel="noopener noreferrer" class="text-mono" id="link-footer-css-tricks">CSS-Tricks</a></li>
+                        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="text-mono" id="link-footer-mdn">MDN Docs</a></li>
                     </ul>
                 </div>
             </div>
