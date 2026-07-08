@@ -49,137 +49,20 @@
                 <h2>Featured Destinations</h2>
                 <p>Explore hand-crafted journals detailing route info, duration, and personal insights.</p>
             </div>
-            <div class="destinations-grid">
-                <!-- Destination 1 -->
-                <article class="glass-card destination-card" id="dest-card-reykjavik">
-                     <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #013</span>
-                            <span class="coordinates text-mono">64.1466° N, 21.9426° W</span>
-                        </header>
-                        <h3 class="card-title">Reykjavík Aurora</h3>
-                        <p class="card-excerpt">
-                            Chasing the Aurora Borealis across the Icelandic lava fields. Green ribbons of light danced across the clear night sky, reflecting on the volcanic sands.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">4 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">120 km</span>
-                    </footer>
-                </article>
 
-                <article class="glass-card destination-card" id="dest-card-amalfi">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #014</span>
-                            <span class="coordinates text-mono">40.6340° N, 14.6027° E</span>
-                        </header>
-                        <h3 class="card-title">Amalfi Steps</h3>
-                        <p class="card-excerpt">
-                            Navigating the historic stairways between cliffside villages. The Mediterranean sea stretches infinitely in brilliant turquoise beneath the lemon groves.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">7 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">28 km</span>
-                    </footer>
-                </article>
+            <!-- Action button for creating new trip -->
+            <div class="add-trip-container">
+                <button id="add-trip-btn" class="add-btn">+ Add New Trip</button>
+            </div>
 
-              
-                <article class="glass-card destination-card" id="dest-card-patagonia">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517330357046-3ab5a5dd42a1?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #015</span>
-                            <span class="coordinates text-mono">51.2530° S, 72.3392° W</span>
-                        </header>
-                        <h3 class="card-title">Patagonia Windward</h3>
-                        <p class="card-excerpt">
-                            Exploring the dramatic granite peaks of Torres del Paine. Strong southern winds and majestic glaciers shaped our challenging trek through the wilderness.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">8 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">85 km</span>
-                    </footer>
-                </article>
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state hidden">
+                <p>No travel plans recorded yet. Click "+ Add New Trip" above to start your journal!</p>
+            </div>
 
-                
-                <article class="glass-card destination-card" id="dest-card-kyoto">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #016</span>
-                            <span class="coordinates text-mono">35.0116° N, 135.7681° E</span>
-                        </header>
-                        <h3 class="card-title">Kyoto Bamboo</h3>
-                        <p class="card-excerpt">
-                            Walking through the towering Arashiyama groves at sunrise. The morning light filters through the giant green stalks, creating a serene and timeless atmosphere.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">5 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">34 km</span>
-                    </footer>
-                </article>
-
-                
-                <article class="glass-card destination-card" id="dest-card-santorini">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #017</span>
-                            <span class="coordinates text-mono">36.4166° N, 25.4324° E</span>
-                        </header>
-                        <h3 class="card-title">Santorini Caldera</h3>
-                        <p class="card-excerpt">
-                            Watching the sunset over the white-washed cliffside houses. The volcanic caldera stretches below in deep blue, dotted with sailing yachts.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">3 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">15 km</span>
-                    </footer>
-                </article>
-
-              
-                <article class="glass-card destination-card" id="dest-card-sahara">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=600&q=80');"></div>
-                    <div>
-                        <header class="card-header">
-                            <span class="badge text-mono">Travel Log #018</span>
-                            <span class="coordinates text-mono">31.1803° N, 4.0178° W</span>
-                        </header>
-                        <h3 class="card-title">Sahara Dunes</h3>
-                        <p class="card-excerpt">
-                            Trekking by camel into the golden Erg Chebbi dunes. Camping under an endless sea of desert stars while listening to traditional Berber music.
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <span class="stat-label text-mono">Duration</span>
-                        <span class="stat-value text-mono">2 Days</span>
-                        <span class="divider text-mono">|</span>
-                        <span class="stat-label text-mono">Distance</span>
-                        <span class="stat-value text-mono">45 km</span>
-                    </footer>
-                </article>
+            <!-- Dynamic Destinations Grid -->
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- Cards will render dynamically here via JavaScript -->
             </div>
         </section>
     </main>
@@ -214,6 +97,65 @@
             <p>&copy; 2026 Wanderlog. Built for the CodGen Internship. All rights reserved.</p>
         </div>
     </footer>
+    <!-- Week 2 Modals -->
+    <!-- Add/Edit Trip Modal -->
+    <div id="trip-modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <h3 id="modal-title">Plan Your Next Trip</h3>
+        <form id="trip-form" novalidate>
+          <input type="hidden" id="trip-id">
 
+          <label for="trip-title">Trip Title <span style="color:#f87171">*</span></label>
+          <input type="text" id="trip-title" required placeholder="e.g. Summer Getaway">
+          <span id="title-error" class="error">Title is required.</span>
+
+          <label for="trip-destination">Destination <span style="color:#f87171">*</span></label>
+          <input type="text" id="trip-destination" required placeholder="e.g. Kyoto, Japan">
+          <span id="destination-error" class="error">Destination is required.</span>
+          <div style="display: flex; gap: 15px; margin-top: 12px;">
+            <div style="flex: 1;">
+              <label for="trip-start-date" style="margin-top: 0;">Start Date <span style="color:#f87171">*</span></label>
+              <input type="date" id="trip-start-date" required>
+              <span id="start-date-error" class="error">Start date is required.</span>
+            </div>
+            <div style="flex: 1;">
+              <label for="trip-end-date" style="margin-top: 0;">End Date <span style="color:#f87171">*</span></label>
+              <input type="date" id="trip-end-date" required>
+              <span id="end-date-error" class="error">End date is required (must not be before start).</span>
+            </div>
+          </div>
+
+          <label for="trip-duration-display">Duration</label>
+          <input type="text" id="trip-duration-display" placeholder="e.g. 5">
+
+          <label for="trip-image">Cover Image URL</label>
+          <input type="text" id="trip-image" placeholder="e.g. https://images.unsplash.com/... (optional)">
+          <span id="image-error" class="error">Please enter a valid URL (starting with http:// or https://).</span>
+
+          <label for="trip-notes">Notes & Plans</label>
+          <textarea id="trip-notes" rows="4" placeholder="What are your plans? Items to pack, sights to see..."></textarea>
+
+          <div class="modal-buttons">
+            <button type="button" id="close-btn">Cancel</button>
+            <button type="submit" id="save-btn">Save Adventure</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-content" style="text-align: center;">
+        <h3 style="color:#ef4444; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">Delete Trip?</h3>
+        <p style="margin: 15px 0; color: #cbd5e1;">Are you sure you want to delete <strong id="delete-trip-name">this trip</strong>? This action cannot be undone.</p>
+        <div class="modal-buttons" style="justify-content: center;">
+          <button type="button" id="cancel-delete-btn">No, Keep It</button>
+          <button type="button" id="confirm-delete-btn">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 2: Initialized CRUD modals and forms -->
+    <script src="destination.js"></script>
 </body>
 </html>
