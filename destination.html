@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Featured Destinations — Wanderlog</title>
     <meta name="description" content="Discover hand-crafted journals detailing route info, duration, and personal insights.">
-    <!-- Google Fonts: Fraunces, Work Sans, Space Mono -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,6 +32,8 @@
                 <li><a href="index.html" class="nav-link text-mono" id="nav-link-home">Home</a></li>
                 <li><a href="destination.html" class="nav-link active text-mono" id="nav-link-destinations">Destinations</a></li>
                 <li><a href="about.html" class="nav-link text-mono" id="nav-link-about">About</a></li>
+                <li><a href="#" class="nav-link text-mono" id="nav-link-edit-profile">Edit Profile</a></li>
+                <li><a href="profile.html" class="nav-link text-mono" id="nav-link-profile">View Profile</a></li>
             </ul>
 
             <div class="auth-buttons">
@@ -42,7 +44,7 @@
     </header>
 
     <main>
-        <!-- Featured Destinations -->
+        
         <section class="destinations" id="destination">
             <div class="section-header">
                 <span class="category-tag text-mono">Curated Logs</span>
@@ -50,19 +52,19 @@
                 <p>Explore hand-crafted journals detailing route info, duration, and personal insights.</p>
             </div>
 
-            <!-- Action button for creating new trip -->
+            
             <div class="add-trip-container">
                 <button id="add-trip-btn" class="add-btn">+ Add New Trip</button>
             </div>
 
-            <!-- Empty State -->
+            
             <div id="empty-state" class="empty-state hidden">
                 <p>No travel plans recorded yet. Click "+ Add New Trip" above to start your journal!</p>
             </div>
 
-            <!-- Dynamic Destinations Grid -->
+            
             <div class="destinations-grid" id="destinations-grid">
-                <!-- Cards will render dynamically here via JavaScript -->
+                
             </div>
         </section>
     </main>
@@ -97,8 +99,8 @@
             <p>&copy; 2026 Wanderlog. Built for the CodGen Internship. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Week 2 Modals -->
-    <!-- Add/Edit Trip Modal -->
+    
+    
     <div id="trip-modal" class="modal hidden" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <h3 id="modal-title">Plan Your Next Trip</h3>
@@ -132,6 +134,13 @@
           <input type="text" id="trip-image" placeholder="e.g. https://images.unsplash.com/... (optional)">
           <span id="image-error" class="error">Please enter a valid URL (starting with http:// or https://).</span>
 
+          <label for="trip-image-file" style="margin-top: 10px;">Or Upload Cover Image File</label>
+          <input type="file" id="trip-image-file" accept="image/*">
+          <div id="image-preview-container" class="hidden" style="margin-top: 10px; text-align: center;">
+            <p style="font-size: 11px; color: #94a3b8; margin-bottom: 5px; font-family: 'Space Mono', monospace;">Image Preview:</p>
+            <img id="image-preview" src="" alt="Upload Preview" style="max-height: 120px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          </div>
+
           <label for="trip-notes">Notes & Plans</label>
           <textarea id="trip-notes" rows="4" placeholder="What are your plans? Items to pack, sights to see..."></textarea>
 
@@ -143,7 +152,7 @@
       </div>
     </div>
 
-    <!-- Delete Confirmation Modal -->
+    
     <div id="delete-modal" class="modal hidden" role="dialog" aria-hidden="true">
       <div class="modal-content" style="text-align: center;">
         <h3 style="color:#ef4444; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px;">Delete Trip?</h3>
@@ -155,7 +164,43 @@
       </div>
     </div>
 
-    <!-- Week 2: Initialized CRUD modals and forms -->
+    
+    <div id="profile-modal" class="modal hidden" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <h3 style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; margin-bottom: 15px;">Edit Profile Settings</h3>
+        <form id="profile-form" novalidate>
+          <label for="profile-name">Full Name <span style="color:#f87171">*</span></label>
+          <input type="text" id="profile-name" required placeholder="e.g. Sakshi Kolekar">
+          <span id="profile-name-error" class="error">Name is required.</span>
+
+          <label for="profile-bio" style="margin-top: 12px;">Short Bio</label>
+          <textarea id="profile-bio" rows="3" placeholder="Tell other travelers about yourself..."></textarea>
+
+          <label for="profile-avatar-file" style="margin-top: 12px;">Profile Picture File</label>
+          <input type="file" id="profile-avatar-file" accept="image/*">
+          <div id="profile-avatar-preview-container" class="hidden" style="margin-top: 10px; text-align: center;">
+            <p style="font-size: 11px; color: #94a3b8; margin-bottom: 5px; font-family: 'Space Mono', monospace;">Avatar Preview:</p>
+            <img id="profile-avatar-preview" src="" alt="Avatar Preview" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #00f2fe; display: inline-block;">
+          </div>
+
+          <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 15px; margin-top: 15px;">
+            <label for="profile-switch-username">Switch / Create New Profile</label>
+            <div style="display: flex; gap: 8px; margin-top: 5px;">
+              <input type="text" id="profile-switch-username" placeholder="e.g. rohan" style="margin-bottom: 0; flex: 1;">
+              <button type="button" id="switch-profile-btn" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #0b1d3a; border: none; padding: 10px 16px; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 12px; cursor: pointer; font-weight: bold; white-space: nowrap;">Switch</button>
+            </div>
+            <span id="profile-switch-error" class="error">Username must be letters and numbers only.</span>
+          </div>
+
+          <div class="modal-buttons" style="margin-top: 20px;">
+            <button type="button" id="close-profile-btn">Cancel</button>
+            <button type="submit" id="save-profile-btn">Save Profile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    
     <script src="destination.js"></script>
 </body>
 </html>
