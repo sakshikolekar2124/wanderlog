@@ -4,7 +4,6 @@ var tripModal = document.getElementById("trip-modal");
 var closeModalBtn = document.getElementById("close-btn");
 var tripForm = document.getElementById("trip-form");
 
-
 var tripIdInput = document.getElementById("trip-id");
 var titleInput = document.getElementById("trip-title");
 var destinationInput = document.getElementById("trip-destination");
@@ -22,27 +21,47 @@ var startDateError = document.getElementById("start-date-error");
 var endDateError = document.getElementById("end-date-error");
 var imageError = document.getElementById("image-error");
 
-
 var emptyState = document.getElementById("empty-state");
 var destinationsGrid = document.getElementById("destinations-grid");
-
 
 var deleteModal = document.getElementById("delete-modal");
 var deleteTripName = document.getElementById("delete-trip-name");
 var confirmDeleteBtn = document.getElementById("confirm-delete-btn");
 var cancelDeleteBtn = document.getElementById("cancel-delete-btn");
 
+var tripImageFileInput = document.getElementById("trip-image-file");
+var imagePreviewContainer = document.getElementById("image-preview-container");
+var imagePreview = document.getElementById("image-preview");
+var uploadedBase64Image = "";
+
+var profileModal = document.getElementById("profile-modal");
+var closeProfileBtn = document.getElementById("close-profile-btn");
+var profileForm = document.getElementById("profile-form");
+var profileNameInput = document.getElementById("profile-name");
+var profileBioInput = document.getElementById("profile-bio");
+var profileAvatarFileInput = document.getElementById("profile-avatar-file");
+var profileAvatarPreviewContainer = document.getElementById("profile-avatar-preview-container");
+var profileAvatarPreview = document.getElementById("profile-avatar-preview");
+var profileNameError = document.getElementById("profile-name-error");
+
+var profileSwitchUsernameInput = document.getElementById("profile-switch-username");
+var switchProfileBtn = document.getElementById("switch-profile-btn");
+var profileSwitchError = document.getElementById("profile-switch-error");
+
+var navEditProfile = document.getElementById("nav-link-edit-profile");
+var navViewProfile = document.getElementById("nav-link-profile");
+
+var currentProfileUsername = "sakshikolekar";
+var uploadedProfileAvatarBase64 = "";
 
 var tripsArray = [];
 var selectedTripIdForDelete = null;
-
 
 var BEACH_IMAGE = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80";
 var MOUNTAIN_IMAGE = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80";
 var CITY_IMAGE = "https://i.pinimg.com/1200x/b5/d6/01/b5d60173028061dfb8c58a2cc8c0a2d4.jpg";
 var DEFAULT_IMAGE = "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80";
 
-// Original Week 1 Destination cards as default starter data (Indian Places)
 var defaultTrips = [
     {
         id: "trip_default_1",
@@ -106,18 +125,82 @@ var defaultTrips = [
     }
 ];
 
+var params = new URLSearchParams(window.location.search);
+var currentProfileUsername = params.get("user") || "sakshikolekar";
+
+if (navViewProfile) {
+    navViewProfile.href = "profile.html?user=" + currentProfileUsername;
+}
+
+var logoLink = document.getElementById("logo-link");
+if (logoLink) logoLink.href = "index.html?user=" + currentProfileUsername;
+var navHome = document.getElementById("nav-link-home");
+if (navHome) navHome.href = "index.html?user=" + currentProfileUsername;
+var navDest = document.getElementById("nav-link-destinations");
+if (navDest) navDest.href = "destination.html?user=" + currentProfileUsername;
+var navAbout = document.getElementById("nav-link-about");
+if (navAbout) navAbout.href = "about.html?user=" + currentProfileUsername;
+
 function loadTripsFromStorage() {
-    var storedData = localStorage.getItem("wandarlog_trips");
+    var storedData = localStorage.getItem("wandarlog_trips_" + currentProfileUsername);
     if (storedData) {
         tripsArray = JSON.parse(storedData);
     } else {
-        tripsArray = defaultTrips;
+        if (currentProfileUsername === "amit") {
+            tripsArray = [
+                {
+                    id: "trip_amit_1",
+                    title: "Kedarkantha Winter Summit",
+                    destination: "Uttarkashi, Uttarakhand, India",
+                    startDate: "2025-12-15",
+                    endDate: "2025-12-20",
+                    duration: 6,
+                    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+                    notes: "📌 Key Highlights: Trekking in deep snow, Camping under stars, 360-degree view of Himalayan peaks from summit.\n🎒 Packing: Heavy layers, crampons, trekking poles."
+                },
+                {
+                    id: "trip_amit_2",
+                    title: "Leh Ladakh Bike Expedition",
+                    destination: "Leh, Ladakh, India",
+                    startDate: "2026-06-10",
+                    endDate: "2026-06-20",
+                    duration: 11,
+                    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+                    notes: "📌 Sights: Khardung La Pass, Pangong Lake, Nubra Valley sand dunes.\n🏍️ Ride: Classic 500cc Royal Enfield."
+                }
+            ];
+        } else if (currentProfileUsername === "priya") {
+            tripsArray = [
+                {
+                    id: "trip_priya_1",
+                    title: "Kerala Backwater Houseboat Cruise",
+                    destination: "Alleppey, Kerala, India",
+                    startDate: "2026-01-05",
+                    endDate: "2026-01-09",
+                    duration: 5,
+                    image: "https://images.unsplash.com/photo-1516690561799-46d8f74f90f6?auto=format&fit=crop&w=600&q=80",
+                    notes: "📌 Sights: Houseboat stay, fresh coconut water, bird watching, spice village walk."
+                },
+                {
+                    id: "trip_priya_2",
+                    title: "Exploring Hampi Ancient Ruins",
+                    destination: "Hampi, Karnataka, India",
+                    startDate: "2026-11-22",
+                    endDate: "2026-11-25",
+                    duration: 4,
+                    image: "https://images.unsplash.com/photo-1600100397608-f010e42ec9a4?auto=format&fit=crop&w=600&q=80",
+                    notes: "📌 Highlights: Virupaksha Temple, stone chariot, sunset from Matanga Hill.\n🚲 Transit: Rented bicycle."
+                }
+            ];
+        } else {
+            tripsArray = defaultTrips;
+        }
         saveTripsToStorage();
     }
 }
 
 function saveTripsToStorage() {
-    localStorage.setItem("wandarlog_trips", JSON.stringify(tripsArray));
+    localStorage.setItem("wandarlog_trips_" + currentProfileUsername, JSON.stringify(tripsArray));
 }
 
 function getCoverImage(url, title, destination) {
@@ -230,6 +313,12 @@ function openAddForm() {
     imageInput.value = "";
     notesInput.value = "";
     
+    
+    tripImageFileInput.value = "";
+    uploadedBase64Image = "";
+    imagePreview.src = "";
+    imagePreviewContainer.classList.add("hidden");
+    
     clearErrors();
     
     modalTitle.textContent = "Plan Your Next Trip";
@@ -261,7 +350,7 @@ function parseLocalDate(dateStr) {
     if (!dateStr) return null;
     var parts = dateStr.split("-");
     if (parts.length !== 3) return null;
-    // year, monthIndex (0-11), day
+    
     return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
 }
 
@@ -284,7 +373,7 @@ function updateDurationDisplay() {
 }
 
 function onFormSubmit(event) {
-    event.preventDefault(); // Stop page refresh
+    event.preventDefault(); 
     
     clearErrors();
     
@@ -326,7 +415,7 @@ function onFormSubmit(event) {
     }
     
     var imgVal = imageInput.value.trim();
-    if (imgVal !== "") {
+    if (!uploadedBase64Image && imgVal !== "") {
         if (imgVal.indexOf("http://") !== 0 && imgVal.indexOf("https://") !== 0) {
             imageInput.classList.add("invalid");
             imageError.classList.add("show");
@@ -351,7 +440,7 @@ function onFormSubmit(event) {
         startDate: startDateInput.value,
         endDate: endDateInput.value,
         duration: durationDisplay.value.trim() || diffDays,
-        image: imageInput.value.trim(),
+        image: uploadedBase64Image || imageInput.value.trim(),
         notes: notesInput.value.trim()
     };
     
@@ -388,8 +477,26 @@ window.openEditForm = function(id) {
         destinationInput.value = selectedTrip.destination;
         startDateInput.value = selectedTrip.startDate || selectedTrip.date || "";
         endDateInput.value = selectedTrip.endDate || selectedTrip.date || "";
-        imageInput.value = selectedTrip.image;
         notesInput.value = selectedTrip.notes;
+        
+        
+        tripImageFileInput.value = "";
+        if (selectedTrip.image && selectedTrip.image.trim() !== "") {
+            imagePreview.src = selectedTrip.image;
+            imagePreviewContainer.classList.remove("hidden");
+            if (selectedTrip.image.indexOf("data:image/") === 0) {
+                uploadedBase64Image = selectedTrip.image;
+                imageInput.value = "";
+            } else {
+                uploadedBase64Image = "";
+                imageInput.value = selectedTrip.image;
+            }
+        } else {
+            uploadedBase64Image = "";
+            imagePreview.src = "";
+            imagePreviewContainer.classList.add("hidden");
+            imageInput.value = "";
+        }
         
         clearErrors();
         
@@ -461,7 +568,171 @@ window.addEventListener("keydown", function(event) {
     }
 });
 
+if (!localStorage.getItem("wandarlog_profile_" + currentProfileUsername)) {
+    var defaultProfile = {};
+    if (currentProfileUsername === "amit") {
+        defaultProfile = {
+            name: "Amit Patel",
+            bio: "Mountain lover and trekking enthusiast. Exploring the Himalayas, one peak at a time.",
+            avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+        };
+    } else if (currentProfileUsername === "priya") {
+        defaultProfile = {
+            name: "Priya Sharma",
+            bio: "Beach lover & solo backpacker. Finding peace in coastal towns and heritage sites.",
+            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
+        };
+    } else {
+        defaultProfile = {
+            name: "Sakshi Kolekar",
+            bio: "Avid traveler & frontend explorer. Documenting my journey across the beautiful landscapes of India.",
+            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+        };
+    }
+    localStorage.setItem("wandarlog_profile_" + currentProfileUsername, JSON.stringify(defaultProfile));
+}
+
 loadTripsFromStorage();
 renderTrips();
 
-// Week 2: Implemented local storage save and retrieve functions
+tripImageFileInput.addEventListener("change", function() {
+    var file = tripImageFileInput.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            uploadedBase64Image = e.target.result;
+            imagePreview.src = uploadedBase64Image;
+            imagePreviewContainer.classList.remove("hidden");
+            imageInput.value = ""; 
+        };
+        reader.readAsDataURL(file);
+    } else {
+        uploadedBase64Image = "";
+        imagePreview.src = "";
+        imagePreviewContainer.classList.add("hidden");
+    }
+});
+
+imageInput.addEventListener("input", function() {
+    var val = imageInput.value.trim();
+    if (val !== "") {
+        if (val.indexOf("http://") === 0 || val.indexOf("https://") === 0) {
+            imagePreview.src = val;
+            imagePreviewContainer.classList.remove("hidden");
+            tripImageFileInput.value = ""; 
+            uploadedBase64Image = "";
+        }
+    } else {
+        if (!uploadedBase64Image) {
+            imagePreview.src = "";
+            imagePreviewContainer.classList.add("hidden");
+        }
+    }
+});
+
+function openProfileModal() {
+    profileNameError.classList.remove("show");
+    profileNameInput.classList.remove("invalid");
+    
+    
+    if (profileSwitchUsernameInput) profileSwitchUsernameInput.value = "";
+    if (profileSwitchError) profileSwitchError.classList.remove("show");
+
+    var profileData = localStorage.getItem("wandarlog_profile_" + currentProfileUsername);
+    if (profileData) {
+        var profile = JSON.parse(profileData);
+        profileNameInput.value = profile.name || "";
+        profileBioInput.value = profile.bio || "";
+        if (profile.avatar) {
+            uploadedProfileAvatarBase64 = profile.avatar;
+            profileAvatarPreview.src = profile.avatar;
+            profileAvatarPreviewContainer.classList.remove("hidden");
+        } else {
+            uploadedProfileAvatarBase64 = "";
+            profileAvatarPreview.src = "";
+            profileAvatarPreviewContainer.classList.add("hidden");
+        }
+    }
+    
+    profileAvatarFileInput.value = "";
+    profileModal.classList.remove("hidden");
+}
+
+function closeProfileModal() {
+    profileModal.classList.add("hidden");
+}
+
+profileAvatarFileInput.addEventListener("change", function() {
+    var file = profileAvatarFileInput.files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            uploadedProfileAvatarBase64 = e.target.result;
+            profileAvatarPreview.src = uploadedProfileAvatarBase64;
+            profileAvatarPreviewContainer.classList.remove("hidden");
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+profileForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    profileNameError.classList.remove("show");
+    profileNameInput.classList.remove("invalid");
+    
+    if (profileNameInput.value.trim() === "") {
+        profileNameInput.classList.add("invalid");
+        profileNameError.classList.add("show");
+        return;
+    }
+    
+    var profile = {
+        name: profileNameInput.value.trim(),
+        bio: profileBioInput.value.trim(),
+        avatar: uploadedProfileAvatarBase64
+    };
+    
+    localStorage.setItem("wandarlog_profile_" + currentProfileUsername, JSON.stringify(profile));
+    closeProfileModal();
+});
+
+if (navEditProfile) {
+    navEditProfile.addEventListener("click", function(e) {
+        e.preventDefault();
+        openProfileModal();
+    });
+}
+closeProfileBtn.addEventListener("click", closeProfileModal);
+
+window.addEventListener("click", function(event) {
+    if (event.target === profileModal) {
+        closeProfileModal();
+    }
+});
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeProfileModal();
+    }
+});
+
+if (switchProfileBtn) {
+    switchProfileBtn.addEventListener("click", function() {
+        if (profileSwitchError) profileSwitchError.classList.remove("show");
+        
+        var rawUsername = profileSwitchUsernameInput.value.trim().toLowerCase();
+        
+        
+        var isValid = /^[a-z0-9]+$/.test(rawUsername);
+        
+        if (!isValid || rawUsername === "") {
+            if (profileSwitchError) profileSwitchError.classList.add("show");
+            profileSwitchUsernameInput.classList.add("invalid");
+            return;
+        }
+        
+        profileSwitchUsernameInput.classList.remove("invalid");
+        
+        
+        window.location.search = "?user=" + rawUsername;
+    });
+}
