@@ -1,4 +1,4 @@
-<!-- Wanderlog - Week 1 Assignment submission -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Wanderlog — Travel Journal Platform</title>
     <meta name="description" content="A sanctuary for travelers to plan, log, and organize journeys cleanly.">
-    <!-- Google Fonts: Fraunces, Work Sans, Space Mono -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
                 <li><a href="index.html" class="nav-link text-mono" id="nav-link-home">Home</a></li>
                 <li><a href="destination.html" class="nav-link text-mono" id="nav-link-destinations">Destinations</a></li>
                 <li><a href="about.html" class="nav-link active text-mono" id="nav-link-about">About</a></li>
+                <li><a href="profile.html?user=sakshikolekar" class="nav-link text-mono" id="nav-link-profile">View Profile</a></li>
             </ul>
 
             <div class="auth-buttons">
@@ -131,5 +132,30 @@
         </div>
     </footer>
 
+    <script>
+        // Parse current username from URL query parameters (default to 'sakshikolekar')
+        var params = new URLSearchParams(window.location.search);
+        var currentProfileUsername = params.get("user") || "sakshikolekar";
+
+        // Update navigation links to preserve the user query parameter
+        var logoLink = document.getElementById("logo-link");
+        if (logoLink) logoLink.href = "index.html?user=" + currentProfileUsername;
+        var navHome = document.getElementById("nav-link-home");
+        if (navHome) navHome.href = "index.html?user=" + currentProfileUsername;
+        var navDest = document.getElementById("nav-link-destinations");
+        if (navDest) navDest.href = "destination.html?user=" + currentProfileUsername;
+        var navAbout = document.getElementById("nav-link-about");
+        if (navAbout) navAbout.href = "about.html?user=" + currentProfileUsername;
+        var navProfile = document.getElementById("nav-link-profile");
+        if (navProfile) navProfile.href = "profile.html?user=" + currentProfileUsername;
+
+        // Footer links
+        var footerHome = document.getElementById("link-footer-home");
+        if (footerHome) footerHome.href = "index.html?user=" + currentProfileUsername;
+        var footerDest = document.getElementById("link-footer-destinations");
+        if (footerDest) footerDest.href = "destination.html?user=" + currentProfileUsername;
+        var footerAbout = document.getElementById("link-footer-about");
+        if (footerAbout) footerAbout.href = "about.html?user=" + currentProfileUsername;
+    </script>
 </body>
 </html>

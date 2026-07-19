@@ -28,6 +28,7 @@
                 <li><a href="index.html" class="nav-link active text-mono" id="nav-link-home">Home</a></li>
                 <li><a href="destination.html" class="nav-link text-mono" id="nav-link-destinations">Destinations</a></li>
                 <li><a href="about.html" class="nav-link text-mono" id="nav-link-about">About</a></li>
+                <li><a href="profile.html?user=sakshikolekar" class="nav-link text-mono" id="nav-link-profile">View Profile</a></li>
             </ul>
 
             <div class="auth-buttons">
@@ -39,7 +40,7 @@
 
    
     <main>
-        <!-- Hero Section -->
+        
         <section class="hero" id="home">
             <div class="hero-overlay"></div>
             <div class="hero-container">
@@ -78,8 +79,39 @@
                 </div>
             </div>
         </section>
-    </main>
 
+        
+        <section class="explorers-section" style="padding: 60px 24px; max-width: 1100px; margin: 0 auto; text-align: center;">
+            <span class="category-tag text-mono" style="color: #00f2fe; margin-bottom: 10px; display: inline-block;">Wanderers Community</span>
+            <h2 style="font-family: 'Fraunces', serif; font-size: 32px; color: white; margin-bottom: 30px;">Meet Our Featured Explorers</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                
+                <div class="explorer-card" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; text-align: center; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sakshi Avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #00f2fe; margin-bottom: 15px;">
+                    <h3 style="color: white; font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 8px;">Sakshi Kolekar</h3>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px; min-height: 42px;">Avid traveler & frontend explorer. Documenting Indian landscapes.</p>
+                    <a href="profile.html?user=sakshikolekar" style="display: inline-block; background: transparent; border: 1px solid #00f2fe; color: #00f2fe; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-family: 'Space Mono', monospace; transition: all 0.2s;" onmouseover="this.style.background='rgba(0, 242, 254, 0.08)'" onmouseout="this.style.background='transparent'">View Journal</a>
+                </div>
+
+                
+                <div class="explorer-card" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; text-align: center; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Amit Avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #00f2fe; margin-bottom: 15px;">
+                    <h3 style="color: white; font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 8px;">Amit Patel</h3>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px; min-height: 42px;">Mountain lover and trekking enthusiast. Exploring the Himalayas.</p>
+                    <a href="profile.html?user=amit" style="display: inline-block; background: transparent; border: 1px solid #00f2fe; color: #00f2fe; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-family: 'Space Mono', monospace; transition: all 0.2s;" onmouseover="this.style.background='rgba(0, 242, 254, 0.08)'" onmouseout="this.style.background='transparent'">View Journal</a>
+                </div>
+
+                
+                <div class="explorer-card" style="background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; text-align: center; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Priya Avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #00f2fe; margin-bottom: 15px;">
+                    <h3 style="color: white; font-family: 'Fraunces', serif; font-size: 20px; margin-bottom: 8px;">Priya Sharma</h3>
+                    <p style="color: #94a3b8; font-size: 14px; margin-bottom: 20px; min-height: 42px;">Beach lover & solo backpacker. Finding peace in coastal towns.</p>
+                    <a href="profile.html?user=priya" style="display: inline-block; background: transparent; border: 1px solid #00f2fe; color: #00f2fe; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 13px; font-family: 'Space Mono', monospace; transition: all 0.2s;" onmouseover="this.style.background='rgba(0, 242, 254, 0.08)'" onmouseout="this.style.background='transparent'">View Journal</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="app-footer">
         <div class="footer-container">
@@ -111,5 +143,30 @@
         </div>
     </footer>
 
+    <script>
+        // Parse current username from URL query parameters (default to 'sakshikolekar')
+        var params = new URLSearchParams(window.location.search);
+        var currentProfileUsername = params.get("user") || "sakshikolekar";
+
+        // Update navigation links to preserve the user query parameter
+        var logoLink = document.getElementById("logo-link");
+        if (logoLink) logoLink.href = "index.html?user=" + currentProfileUsername;
+        var navHome = document.getElementById("nav-link-home");
+        if (navHome) navHome.href = "index.html?user=" + currentProfileUsername;
+        var navDest = document.getElementById("nav-link-destinations");
+        if (navDest) navDest.href = "destination.html?user=" + currentProfileUsername;
+        var navAbout = document.getElementById("nav-link-about");
+        if (navAbout) navAbout.href = "about.html?user=" + currentProfileUsername;
+        var navProfile = document.getElementById("nav-link-profile");
+        if (navProfile) navProfile.href = "profile.html?user=" + currentProfileUsername;
+
+        // Footer links
+        var footerHome = document.getElementById("link-footer-home");
+        if (footerHome) footerHome.href = "index.html?user=" + currentProfileUsername;
+        var footerDest = document.getElementById("link-footer-destinations");
+        if (footerDest) footerDest.href = "destination.html?user=" + currentProfileUsername;
+        var footerAbout = document.getElementById("link-footer-about");
+        if (footerAbout) footerAbout.href = "about.html?user=" + currentProfileUsername;
+    </script>
 </body>
 </html>

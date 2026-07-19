@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Profile — Wanderlog</title>
+    <meta name="description" content="View travel journals, itineraries, and stories shared on Wanderlog.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-wrapper {
+            padding-top: 140px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo" id="logo-link">
+                <span class="logo-icon">W</span>
+                <span class="logo-text">Wanderlog</span>
+            </a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle-label">☰</label>
+            
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link text-mono" id="nav-link-home">Home</a></li>
+                <li><a href="destination.html" class="nav-link text-mono" id="nav-link-destinations">Destinations</a></li>
+                <li><a href="about.html" class="nav-link text-mono" id="nav-link-about">About</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="destination.html" class="signin text-mono" id="dashboard-btn" style="border: 1px solid rgba(0, 242, 254, 0.4); padding: 8px 16px; border-radius: 20px; color: #00f2fe; text-decoration: none; font-size: 13px; transition: all 0.2s;" onmouseover="this.style.background='rgba(0, 242, 254, 0.08)'" onmouseout="this.style.background='transparent'">Dashboard</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-wrapper">
+        
+        <section class="profile-card">
+            <img id="user-avatar" class="profile-avatar-large" src="" alt="Traveler Avatar">
+            <h2 id="user-name" class="profile-name-large"></h2>
+            <p id="user-bio" class="profile-bio-large"></p>
+            
+            <div class="profile-stats">
+                <div class="profile-stat-item">
+                    <strong id="stat-trips-count">0</strong> trips
+                </div>
+                <div class="profile-stat-item">
+                    <strong id="stat-days-count">0</strong> days traveled
+                </div>
+            </div>
+        </section>
+
+        
+        <div class="profile-header-actions">
+            <h3 class="profile-title">Travel Journal</h3>
+            <span class="category-tag text-mono" style="margin: 0;">Public Share Link</span>
+        </div>
+
+        
+        <div id="profile-empty-state" class="empty-state hidden">
+            <p>No travel plans recorded yet by this traveler.</p>
+        </div>
+
+        
+        <div class="destinations-grid" id="profile-destinations-grid">
+            
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-text">Wanderlog</span>
+                <p class="footer-tagline">Elite Frontend Travel Journal Platform</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html" class="text-mono" id="link-footer-home">Home</a></li>
+                        <li><a href="destination.html" class="text-mono" id="link-footer-destinations">Destinations</a></li>
+                        <li><a href="about.html" class="text-mono" id="link-footer-about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wanderlog. Built for the CodGen Internship. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    <script src="profile.js"></script>
+</body>
+</html>
